@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simon says</title>
+
+    <!-- Mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--Font Awesome (not needed for this app)-->
+    <!-- <script src="https://use.fontawesome.com/f9ff2609a9.js"></script> -->
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.css" />
+
+    <!-- Page Style -->
+    <link rel="stylesheet" href="css/simon.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="well jumbotron">
+
+            <h1> Simon Says </h1>
+
+            <div class="togglebutton">
+          <label>
+            <input type="checkbox" checked id='strict'> Strict Mode
+          </label>
+            </div>
+
+            <div class="btn btn-primary" id="newGame"> New Game </div>
+
+        </div>
+
+        <div>
+            <div class="card" id="red"></div>
+            <div class="card" id="blue"></div>
+            <div class="card" id="yellow"></div>
+            <div class="card" id="green"></div>
+
+            <div id="info" class="well"> Goal is to get to 20 steps</div>
+        </div>
+
+
+        <hr>
+
+        <div id="steps" class='well'>
+            <span id="stepNumber">0</span> Steps
+        </div>
+
+        <footer class="well">
+            <small>  Made as a project for <a href="http://freecodecamp.com/mathewleland">Free Code Camp.</a>. </small>
+            <small>  See a full list of projects by <a href="http://github.com/mathewleland">Mathew Leland</a>  </small>
+        </footer>
+
+    </div>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JQuery  -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+    <!-- Page specific JS and Material Design CDN links -->
+    <script src="js/simon.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.js"></script>
+    <script>
+        $(function() {
+            $.material.init();
+        });
+    </script>
+
+</body>
+
+</html>

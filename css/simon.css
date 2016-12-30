@@ -1,0 +1,110 @@
+.container {
+	max-width: 600px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+input {
+	margin: 0px auto;
+	display:inline;
+}
+
+.button {
+	width: 250px;
+	height: 250px;
+	border: solid 1px black;
+	border-radius: 5px;
+	display: inline-block;
+	box-shadow: 2px 3px;
+}
+
+.card {
+      background: #fff;
+      border-radius: 2px;
+      display: inline-block;
+      height: 200px;
+      margin: 1rem;
+      position: relative;
+      width: 200px;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      transition: all 1s cubic-bezier(.55,.8,.25,1);
+      font-size: 800%;
+      text-align: center;
+      font-family: Roboto;
+      padding-top: 15px;
+      color: #009688;
+      font-weight: bold;
+    }
+
+.card:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#red {
+	background-color: #E91E63;
+}
+
+#yellow {
+	background-color: #FFEB3B;
+}
+
+#green {
+	background-color: #009688;
+}
+
+#blue {
+	background-color: #03A9F4;
+}
+
+#info {
+	font-size: 36px;
+	color: #009688;
+	position:absolute;
+	margin: -350px 80px;
+	z-index: 1;
+	text-align: center;
+	height: 200px;
+	width: 50%;
+	max-width: 400px;
+
+	/*visibility: hidden;*/
+}
+
+#steps {
+	font-size: 24px;
+	width: 30%;
+	text-align: center;
+	margin: -25px auto 15px auto;
+}
+
+@media only screen and (max-width: 700px) {
+	.container {
+			width: 375px;
+			margin: 10px auto;
+			text-align: center;
+	}
+	#newGame {
+		text-align: left;
+	}
+	.card {
+		height: 150px;
+		width: 150px;
+		margin: 5px 5px;
+		font-size: 66px;
+		padding-top: 5px;
+	}
+	#info {
+		font-size: 24px;
+		margin: -270px 70px;
+		z-index: 1;
+		text-align: center;
+		height: 200px;
+		width: 50%;
+		max-width: 400px;
+
+		/*visibility: hidden;*/
+	}
+	footer {
+		max-width: 90%;
+	}
+}
