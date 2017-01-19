@@ -1,13 +1,6 @@
-var answers = [],
+let answers = [],
     attempts = [],
     strict = false,
-    colors = ["red", "yellow", "blue", "green"],
-    original = {
-        red: "#E91E63",
-        yellow: "#FFEB3B",
-        blue: "#03A9F4",
-        green: "#009688"
-    },
     sounds = {
         red: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
         yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
@@ -16,19 +9,26 @@ var answers = [],
     },
     speed = 900,
     steps = 0;
+const colors = ["red", "yellow", "blue", "green"],
+    original = {
+        red: "#E91E63",
+        yellow: "#FFEB3B",
+        blue: "#03A9F4",
+        green: "#009688"
+    };
 
-$(document).ready(function() {
+$(document).ready(() => {
     $('#newGame').click(newGame);
-    $('#red').click(function() {
+    $('#red').click(() => {
         press('red', player = true)
     });
-    $('#blue').click(function() {
+    $('#blue').click(() => {
         press('blue', player = true)
     });
-    $('#yellow').click(function() {
+    $('#yellow').click(() => {
         press('yellow', player = true)
     });
-    $('#green').click(function() {
+    $('#green').click(() => {
         press('green', player = true)
     });
 });
@@ -39,16 +39,14 @@ function newGame() {
     resetInfo();
     answers.push(colors.newColor());
     playMoves();
-    console.log(answers);
 }
 
 function updateSteps() {
     document.getElementById('stepNumber').innerHTML = answers.length;
-
 }
 
 function playMoves() {
-    var i = 0;
+    let i = 0;
     if (answers.length < 6) {
         speed = 950;
     } else if (answers.length < 11) {
@@ -60,7 +58,7 @@ function playMoves() {
         return;
     }
 
-    var playSounds = window.setInterval(function() {
+    const playSounds = window.setInterval(() => {
         if (i >= answers.length - 1) {
             clearInterval(playSounds);
         }
@@ -79,7 +77,7 @@ function press(id, player = false) {
     // lighten the color on the button
     document.getElementById(id).style.backgroundColor = 'white';
     document.getElementById(id).style.boxShadow = '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)';
-    window.setTimeout(function() {
+    window.setTimeout(() => {
         document.getElementById(id).style.backgroundColor = original[id];
         document.getElementById(id).style.boxShadow = '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)';
     }, 400);
@@ -110,7 +108,7 @@ function press(id, player = false) {
             } else { //not strict
                 attempts = [];
                 updateInfo("Sorry that is incorrect; Watch again.")
-                setTimeout(function() {
+                setTimeout(() => {
                     resetInfo();
                     playMoves();
                 }, 2000);
@@ -154,7 +152,7 @@ Array.prototype.equals = function(array) {
     if (this.length != array.length)
         return false;
 
-    for (var i = 0, l = this.length; i < l; i++) {
+    for (let i = 0, l = this.length; i < l; i++) {
         // Check if we have nested arrays
         if (this[i] instanceof Array && array[i] instanceof Array) {
             // recurse into the nested arrays
