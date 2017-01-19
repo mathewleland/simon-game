@@ -83,7 +83,7 @@ function press(id, player = false) {
     }, 400);
 
     //play audio
-    var sound = sounds[id];
+    let sound = sounds[id];
     sound.play();
 
     //if it is a human player, add to their attempts and check as you play
@@ -94,7 +94,7 @@ function press(id, player = false) {
         if (answers.checkCurrent(attempts)) {
             if (answers.length == attempts.length) {
                 updateSteps();
-                setTimeout(function() {
+                setTimeout(() => {
                     answers.push(colors.newColor());
                     attempts = [];
                     playMoves();
@@ -133,7 +133,7 @@ Array.prototype.checkCurrent = function(guesses) {
     if (!guesses) return false;
 
     if (guesses.length != this.length) {
-        var soFar = this.slice(0, guesses.length);
+        let soFar = this.slice(0, guesses.length);
     } else return this.equals(guesses);
 
     return (soFar.equals(guesses));
